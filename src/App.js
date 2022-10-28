@@ -30,13 +30,13 @@ function App() {
   }
   return (
     <div className="App h-screen flex justify-center items-center">
-      <div className="flex flex-col rounded-lg shadow-md justify-between border-2 py-4 min-w-[200px] min-h-[300px] bg-red-300">
+      <div className="flex flex-col rounded-lg shadow-md justify-between border-2 py-4 min-w-[200px] min-h-[300px] bg-gray-100">
         <h1 className="text-2xl">Tip Calculator</h1>
         <div className="">
-          <label>Total Amount:</label>
+          <label>Total Amount: </label>
           <input
             placeholder="Enter amount"
-            className="rounded text-center w-1/2"
+            className="rounded text-center w-1/2 outline-none"
             value={amount}
             onChange={handleAmount}
           />
@@ -44,7 +44,7 @@ function App() {
         <div className="">
           <p>Total: ${amount}</p>
           <p>Tip: ${tip}</p>
-          <p>Total with tips: {totalWithTips}</p>
+          <p>Total with tips: ${totalWithTips}</p>
         </div>
         {toggle && (
           <div className="">
@@ -52,7 +52,7 @@ function App() {
               placeholder="custom amount"
               onChange={handleCustomTip}
               value={tip}
-              className="text-center"
+              className="text-center rounded outline-none"
             />
             <div className="">
               {tip ? ((tip / amount) * 100).toFixed(0) + " %" : ""}
@@ -62,25 +62,25 @@ function App() {
         <div className="">
           <button
             onClick={() => handleTip(15)}
-            className="border-2 m-1 p-1 bg-yellow-400"
+            className="border-2 m-1 p-1 bg-gray-400 rounded"
           >
             15 %
           </button>
           <button
             onClick={() => handleTip(18)}
-            className="border-2 m-1 p-1 bg-yellow-400"
+            className="border-2 m-1 p-1 bg-gray-400 rounded"
           >
             18 %
           </button>
           <button
             onClick={() => handleTip(22)}
-            className="border-2 m-1 p-1 bg-yellow-400"
+            className="border-2 m-1 p-1 bg-gray-400 rounded"
           >
             22 %
           </button>
           <button
             onClick={handleCustom}
-            className="border-2 m-1 p-1 bg-yellow-400"
+            className="border-2 m-1 p-1 bg-gray-400 rounded"
           >
             Custom
           </button>
